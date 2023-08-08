@@ -1,7 +1,8 @@
-import { Typography } from "@mui/material";
+import { Container, CssBaseline } from "@mui/material";
 import { useEffect, useState } from "react";
 import Catalog from "../../features/catalog/Catalog";
 import { Product } from "../models/product";
+import Header from "./Header";
 
 
 
@@ -21,14 +22,17 @@ function App() {
                 price: (prevState.length * 100 + 100),
                 brand: 'some brand',
                 description: 'some description',
-                pictureUrl: 'httop://picsum.photos/200'
+                pictureUrl: 'http://picsum.photos/200'
             }])
     }
 
     return (
-      <>
-           <Typography variant='h1'>Lodan</Typography>
+    <>
+        <CssBaseline />
+        <Header /> 
+        <Container> 
             <Catalog products={products} addProducts={addProducts} />
+        </Container>
     </>
   );
 }
